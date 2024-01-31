@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+.header_container {
+    width: 100%;
+    height: 82px;
+    background: var(--White, #FFF);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.header_logo {
+    color: var(--Red, #C90000);
+    font-family: 'M PLUS 1p';
+    font-weight: 700;
+    font-size: 32px;
+    line-height: normal;
+    text-decoration: none;
+}
+
+.header_container__nav {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.header_container__nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+
+}
+
+.header_container__nav li {
+    margin-right: 50px;
+}
+
+.header_container__nav a {
+    color: var(--Red, #C90000);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18.2px;
+    text-decoration: none;
+}
+
+.header_container__nav_icons {
+    display: flex;
+    flex-direction: row;
+}
+
+.header_container__nav_icons ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+
+}
+
+.header_container__nav_icons li {
+    margin-right: 15px;
+}
+
+.header_container__call {
+    display: inline-flex;
+    padding: 14px 45px;
+    align-items: flex-start;
+    gap: 10px;
+    background: var(--Red, #C90000);
+    width: 226px;
+    height: 47px;
+    text-decoration: none;
+}
+
+.header_container__call p {
+    color: var(--White, #FFF);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18.2px;
+}
+
+.hero {
+    width: 100%;
+    background: #FFF;
+
+}
+
+.top {
+    margin-top: 110px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.top h1 {
+    color: #222;
+    font-family: Montserrat;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18.2px;
+
+}
+
+#tovar {
+    color: var(--Red, #C90000);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18.2px;
+}
+
+#sort, #filtr {
+    color: #222;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18.2px;
+}
