@@ -114,3 +114,7 @@
     line-height: 100px;
  
 }
+.grid_title{
+    display: flex;
+    flex-direction: row;
+}
