@@ -94,27 +94,34 @@
     justify-content: space-evenly;
 }
 
-.filter_title {
-    display: flex;
-    flex-direction: row;    
-    justify-content: space-evenly;
-
-}
-#sub_title{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;    
-}
 .grid_title {
     display: flex;
-    flex-direction: row;    
+    flex-direction: row;
     justify-content: space-between;
+    width: 750px;
+}
+
+.filter_title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 200px;
+    margin-left: 250px;
+    padding: 0%;
+}
+
+#sub_title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 300px;
+    padding-left: 30px;
 }
 
 .grid_title h1 {
     color: rgb(34, 34, 34);
     font-family: Montserrat;
-   
+    margin-left: 24px;
 }
 
 #tovar {
@@ -126,5 +133,3 @@
     color: rgb(34, 34, 34);
     font-family: Montserrat;
 }
-
-
