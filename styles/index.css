@@ -282,12 +282,14 @@
     margin-top: 10px;
     gap: 10px;
 }
-#hero__grid_filter p{
+
+#hero__grid_filter p {
     color: rgb(34, 34, 34);
-    font-family: Montserrat;    
-    font-weight: 600;    
+    font-family: Montserrat;
+    font-weight: 600;
     text-align: left;
 }
+
 #textbox2 {
     margin-left: 10px;
 }
@@ -318,7 +320,81 @@
 
 footer {
     margin-top: 72px;
-    width: 1440px;
+    width: 100%;
     height: 372px;
     background: rgb(15, 15, 15);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#page_num {
+    position: relative;
+    left: 400px;
+    top: 20px;
+}
+
+#footer__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#footer__logo p {
+    color: rgb(255, 255, 255);
+    font-family: Mplus 1p Bold;
+    font-size: 40px;
+    font-weight: 700;
+
+}
+
+#footer__location {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#footer__location p {
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-weight: 700;
+}
+
+#footer__location a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-weight: 500;
+
+}
+
+#footer__catalog {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+#footer__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+#footer__catalog a {
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+}
+#footer__contacts p{
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 700;
+}
+#footer__contacts a{
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
 }
