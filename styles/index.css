@@ -343,7 +343,7 @@ footer {
 
 #footer__logo p {
     color: rgb(255, 255, 255);
-    font-family: Mplus 1p Bold;
+    font-family: Montserrat;
     font-size: 40px;
     font-weight: 700;
 
@@ -353,6 +353,7 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 300px;
 }
 
 #footer__location p {
@@ -366,7 +367,10 @@ footer {
     color: rgb(255, 255, 255);
     font-family: Montserrat;
     font-weight: 500;
-
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
 }
 
 #footer__catalog {
@@ -397,4 +401,21 @@ footer {
     font-family: Montserrat;
     font-size: 16px;
     font-weight: 500;
+}
+.loc_ic{
+    min-width: 24px;
+    min-height: 24px;
+    max-width: 24px;
+    max-height: 24px;
+}
+.cont{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    text-decoration: none;
+}
+#soc_med{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 }
