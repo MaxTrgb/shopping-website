@@ -505,24 +505,6 @@ footer {
     width: 214px;
     margin-bottom: 10px;
 }
-
-.lds-ellipsis {
-    display: inline-block;
-    position: relative;
-    width: 80px;
-    height: 80px;
-}
-
-.lds-ellipsis div {
-    position: absolute;
-    top: 33px;
-    width: 13px;
-    height: 13px;
-    border-radius: 50%;
-    background: #fff;
-    animation-timing-function: cubic-bezier(0, 1, 1, 0);
-}
-
 .hero {
     display: grid;
     grid-template-columns: 1fr 3fr;
