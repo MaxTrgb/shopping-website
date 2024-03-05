@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
+    
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+
+<body>
+    <script src="/scripts/cart.js"></script>
+    <script>
+        let c = new Cart();
+    </script>
+    <header class="header__container">
+        <h1 class="header__logo">
+            LOGO
+        </h1>
+        <nav class="header__nav">
+            <ul>
+                <li>
+                    <a href="#">Каталог</a>
+                </li>
+                <li>
+                    <a href="#">Про нас</a>
+                </li>
+                <li>
+                    <a href="#">FAQ</a>
+                </li>
+                <li>
+                    <a href="#">Контакти</a>
+                </li>
+            </ul>
+        </nav>
+        <nav class="header__butttons">
+            <ul>
+                <li>
+                    <a href="#"><img src="assets/heart.png" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="assets/Page 1.png" alt=""></a>
+                </li>
+                <li>
+                    <a href="#"><img src="assets/Union.png" alt=""></a>
+                </li>
+            </ul>
+        </nav>
+        <div id="cart_counter"></div>
+        <a class="active" id="phone_btn" href="#">Телефонувати</a>
+    </header>
+    <main>
+        <!-- <section class="first__hero">
+            <div class="your-class">
+                <div>your content</div>
+                <div>your content</div>
+                <div>your content</div>
+                <div>your content</div>
+                <div>your content</div>
+                <div>your content</div>
+                <div>your content</div>
+                <div>your content</div>
+                <div>your content</div>
+              </div>
+        </section> -->
+        <section class="hero__top">
+            <div id="hero__grid_title">
+                <h1>
+                    Гранітні мийки
+                </h1>
+            </div>
+            <div id="hero__grid_how-many">
+                <p>
+                    23 Товара
+                </p>
+            </div>
+            <div id="hero__grid_sort-by">
+                <p>Сортувати за</p>
+                <svg width="18.000000" height="10.000000" viewBox="0 0 18 10" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path id="coolicon" d="M0 1.42932L9 10L18 1.42932L16.5002 0L9 7.14343L1.49982 0L0 1.42932Z"
+                        fill="#C90000" fill-opacity="1.000000" fill-rule="nonzero" />
+                </svg>
+            </div>
+            <div id="hero__grid_filter">
+                <p>Фільтрування</p>
+                <svg width="18.000000" height="20.000000" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <desc>
+                            Created with Pixso.
+                    </desc>
+                    <defs/>
+                    <path id="coolicon" d="M14 20L4 20C2.89545 20 2 19.1046 2 18L2 5L0 5L0 3L4 3L4 2C4 0.895447 4.89545 0 6 0L12 0C13.1046 0 14 0.895447 14 2L14 3L18 3L18 5L16 5L16 18C16 19.1046 15.1046 20 14 20ZM4 5L4 18L14 18L14 5L4 5ZM6 2L6 3L12 3L12 2L6 2Z" fill="#C90000" fill-opacity="1.000000" fill-rule="nonzero"/>
+                </svg>
+                
+            </div>
+        </section>
+        <section class="hero">
+            <div class="hero2__grid ">
+                <div class="hero__grid " id="products_area">
+                    <div class="spinner-grow text-danger" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+                <div id="hero__grid_filter">
+                    <form>
+                        <div class="filter__price">
+                            <div id="price__range">
+                                <p>Ціна</p>
+                                <svg width="18.000000" height="10.000000" viewBox="0 0 18 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+                                    <defs />
+                                    <path id="coolicon"
+                                        d="M18 8.57068L9 0L0 8.57068L1.49982 10L9 2.85657L16.5002 10L18 8.57068Z"
+                                        fill="#C90000" fill-opacity="1.000000" fill-rule="nonzero" />
+                                </svg>
+                            </div>
+                            <div>
+                                <input type="number" name="minPrice" id="minPrice" placeholder="  Мін">
+                                <svg width="11.000000" height="1.000000" viewBox="0 0 11 1" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+                                    <defs />
+                                    <path id="Vector 9" d="M0 0.5L11 0.5" stroke="#C90000" stroke-opacity="1.000000"
+                                        stroke-width="1.000000" />
+                                </svg>
+                                <input type="number" name="maxPrice" id="maxPrice" placeholder="  Макс">
+                            </div>
+                            <input type="range" name="priceRange" id="priceRange">
+                        </div>
+
+                        <div class="filter__size">
+                            <div>
+                                <p>Розмір</p>
+                                <svg width="18.000000" height="10.000000" viewBox="0 0 18 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+                                    <defs />
+                                    <path id="coolicon"
+                                        d="M18 8.57068L9 0L0 8.57068L1.49982 10L9 2.85657L16.5002 10L18 8.57068Z"
+                                        fill="#C90000" fill-opacity="1.000000" fill-rule="nonzero" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div>
+                                    <input type="checkbox" name="size1" id="size1">
+                                    <label for="size1">130 Х 100 см</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="size2" id="size2">
+                                    <label for="size2">120 Х 100 см</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="size3" id="size3">
+                                    <label for="size3">100 Х 100 см</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="size4" id="size4">
+                                    <label for="size4">90 Х 100 см</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="size5" id="size5">
+                                    <label for="size5">80 Х 100 см</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="filter__material">
+                            <div>
+                                <p>Матеріал</p>
+                                <svg width="18.000000" height="10.000000" viewBox="0 0 18 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+                                    <defs />
+                                    <path id="coolicon"
+                                        d="M18 8.57068L9 0L0 8.57068L1.49982 10L9 2.85657L16.5002 10L18 8.57068Z"
+                                        fill="#C90000" fill-opacity="1.000000" fill-rule="nonzero" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div>
+                                    <input type="checkbox" name="material1" id="material1">
+                                    <label for="material1">Метал</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="material2" id="material2">
+                                    <label for="material2">Граніт</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="material3" id="material3">
+                                    <label for="material3">Кераміка</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="material4" id="material4">
+                                    <label for="material4">Бетон</label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="filter__country">
+                            <div>
+                                <p>Країна</p>
+                                <svg width="18.000000" height="10.000000" viewBox="0 0 18 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+                                    <defs />
+                                    <path id="coolicon"
+                                        d="M18 8.57068L9 0L0 8.57068L1.49982 10L9 2.85657L16.5002 10L18 8.57068Z"
+                                        fill="#C90000" fill-opacity="1.000000" fill-rule="nonzero" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div>
+                                    <input type="checkbox" name="country1" id="country1">
+                                    <label for="country1">Україна</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="country2" id="country2">
+                                    <label for="country2">Китай</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="country3" id="country3">
+                                    <label for="country3">Франція</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="country4" id="country4">
+                                    <label for="country4">Германія</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="country5" id="country5">
+                                    <label for="country5">Італія</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="country6" id="country6">
+                                    <label for="country6">Польща</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter__color">
+                            <div>
+                                <p>Колір</p>
+                                <svg width="18.000000" height="10.000000" viewBox="0 0 18 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+                                    <defs />
+                                    <path id="coolicon"
+                                        d="M18 8.57068L9 0L0 8.57068L1.49982 10L9 2.85657L16.5002 10L18 8.57068Z"
+                                        fill="#C90000" fill-opacity="1.000000" fill-rule="nonzero" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div>
+                                    <input type="checkbox" name="color1" id="color1">
+                                    <label for="color1">Білий</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="color2" id="color2">
+                                    <label for="color2">Чорний</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="color3" id="color3">
+                                    <label for="color3">Бежевий</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="color4" id="color4">
+                                    <label for="color4">Червоний</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="color5" id="color5">
+                                    <label for="color5">Сірий</label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+    <footer>
+        <div id="footer__logo">
+            <p>LOGO</p>
+        </div>
+        <div id="footer__location">
+            <p>location</p>
+            <a
+                href="https://www.google.com/maps?client=firefox-b-d&sca_esv=18a3c86ff29c3f24&output=search&q=Wisconsin+Ave,+Suite+700+Chevy+Chase,+Maryland+20815&source=lnms&entry=mc">
+                <svg class="loc_ic" width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <desc>
+                        Created with Pixso.
+                    </desc>
+                    <defs>
+                        <clipPath id="clip1_325">
+                            <rect id="icon" width="24.000000" height="24.000000" fill="white" fill-opacity="0" />
+                        </clipPath>
+                    </defs>
+                    <rect id="icon" width="24.000000" height="24.000000" fill="#FFFFFF" fill-opacity="0" />
+                    <g clip-path="url(#clip1_325)">
+                        <path id="Vector"
+                            d="M12 23C12 23 3 17 3 10C3 7.61304 3.94821 5.32385 5.63605 3.63605C7.32385 1.94818 9.61304 1 12 1C14.387 1 16.6761 1.94818 18.364 3.63605C20.0518 5.32385 21 7.61304 21 10C21 17 12 23 12 23Z"
+                            stroke="#FFFFFF" stroke-opacity="1.000000" stroke-width="1.000000"
+                            stroke-linejoin="round" />
+                        <path id="Vector"
+                            d="M12 13C10.3431 13 9 11.6569 9 10C9 8.34314 10.3431 7 12 7C13.6569 7 15 8.34314 15 10C15 11.6569 13.6569 13 12 13Z"
+                            stroke="#FFFFFF" stroke-opacity="1.000000" stroke-width="1.000000"
+                            stroke-linejoin="round" />
+                    </g>
+                </svg>
+                <p>Wisconsin Ave, Suite 700
+                    Chevy Chase, Maryland 20815</p>
+
+            </a>
+            <a
+                href="https://www.google.com/maps?client=firefox-b-d&sca_esv=18a3c86ff29c3f24&output=search&q=Wisconsin+Ave,+Suite+700+Chevy+Chase,+Maryland+20815&source=lnms&entry=mc">
+                <svg class="loc_ic" width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <desc>
+                        Created with Pixso.
+                    </desc>
+                    <defs>
+                        <clipPath id="clip1_325">
+                            <rect id="icon" width="24.000000" height="24.000000" fill="white" fill-opacity="0" />
+                        </clipPath>
+                    </defs>
+                    <rect id="icon" width="24.000000" height="24.000000" fill="#FFFFFF" fill-opacity="0" />
+                    <g clip-path="url(#clip1_325)">
+                        <path id="Vector"
+                            d="M12 23C12 23 3 17 3 10C3 7.61304 3.94821 5.32385 5.63605 3.63605C7.32385 1.94818 9.61304 1 12 1C14.387 1 16.6761 1.94818 18.364 3.63605C20.0518 5.32385 21 7.61304 21 10C21 17 12 23 12 23Z"
+                            stroke="#FFFFFF" stroke-opacity="1.000000" stroke-width="1.000000"
+                            stroke-linejoin="round" />
+                        <path id="Vector"
+                            d="M12 13C10.3431 13 9 11.6569 9 10C9 8.34314 10.3431 7 12 7C13.6569 7 15 8.34314 15 10C15 11.6569 13.6569 13 12 13Z"
+                            stroke="#FFFFFF" stroke-opacity="1.000000" stroke-width="1.000000"
+                            stroke-linejoin="round" />
+                    </g>
+                </svg>
+                <p>Wisconsin Ave, Suite 700
+                    Chevy Chase, Maryland 20815</p>
+            </a>
+            <a
+                href="https://www.google.com/maps?client=firefox-b-d&sca_esv=18a3c86ff29c3f24&output=search&q=Wisconsin+Ave,+Suite+700+Chevy+Chase,+Maryland+20815&source=lnms&entry=mc">
+                <svg class="loc_ic" width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <desc>
+                        Created with Pixso.
+                    </desc>
+                    <defs>
+                        <clipPath id="clip1_325">
+                            <rect id="icon" width="24.000000" height="24.000000" fill="white" fill-opacity="0" />
+                        </clipPath>
+                    </defs>
+                    <rect id="icon" width="24.000000" height="24.000000" fill="#FFFFFF" fill-opacity="0" />
+                    <g clip-path="url(#clip1_325)">
+                        <path id="Vector"
+                            d="M12 23C12 23 3 17 3 10C3 7.61304 3.94821 5.32385 5.63605 3.63605C7.32385 1.94818 9.61304 1 12 1C14.387 1 16.6761 1.94818 18.364 3.63605C20.0518 5.32385 21 7.61304 21 10C21 17 12 23 12 23Z"
+                            stroke="#FFFFFF" stroke-opacity="1.000000" stroke-width="1.000000"
+                            stroke-linejoin="round" />
+                        <path id="Vector"
+                            d="M12 13C10.3431 13 9 11.6569 9 10C9 8.34314 10.3431 7 12 7C13.6569 7 15 8.34314 15 10C15 11.6569 13.6569 13 12 13Z"
+                            stroke="#FFFFFF" stroke-opacity="1.000000" stroke-width="1.000000"
+                            stroke-linejoin="round" />
+                    </g>
+
+                </svg>
+                <p>Wisconsin Ave, Suite 700
+                    Chevy Chase, Maryland 20815</p>
+            </a>
+        </div>
+        <div id="footer__catalog">
+            <a href="#">Каталог</a>
+            <a href="#">Про нас</a>
+            <a href="#">Контакти</a>
+            <a href="#">FAQ</a>
+        </div>
+        <div id="footer__contacts">
+            <p>Contact Us</p>
+            <a class="cont" href="logo@figma.com">
+                <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <desc>
+                        Created with Pixso.
+                    </desc>
+                    <defs>
+                        <clipPath id="clip1_340">
+                            <rect id="icon" width="24.000000" height="24.000000" fill="white" fill-opacity="0" />
+                        </clipPath>
+                    </defs>
+                    <rect id="icon" width="24.000000" height="24.000000" fill="#FFFFFF" fill-opacity="0" />
+                    <g clip-path="url(#clip1_340)">
+                        <path id="Vector"
+                            d="M20 4C21.1 4 22 4.90002 22 6L22 18C22 19.1 21.1 20 20 20L4 20C2.89999 20 2 19.1 2 18L2 6C2 4.90002 2.89999 4 4 4L20 4Z"
+                            stroke="#FFFFFF" stroke-opacity="1.000000" stroke-width="1.000000"
+                            stroke-linejoin="round" />
+                        <path id="Vector" d="M22 6L12 13L2 6" stroke="#FFFFFF" stroke-opacity="1.000000"
+                            stroke-width="1.000000" stroke-linejoin="round" stroke-linecap="round" />
+                    </g>
+                </svg>
+                <p>
+                    logo@figma.com
+                </p>
+
+            </a>
+            <a class="cont" href="tel:+380 44 123 45 67">
+                <svg width="24.999817" height="25.000305" viewBox="0 0 24.9998 25.0003" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <desc>
+                        Created with Pixso.
+                    </desc>
+                    <defs />
+                    <path id="Vector"
+                        d="M18.3276 6.66046C19.1361 7.46741 19.6849 8.49683 19.9039 9.61694L15.3654 5.08716C16.4877 5.30566 17.5191 5.85345 18.3276 6.66046ZM21.5311 3.45526C23.191 5.10986 24.2379 7.27863 24.4998 9.60547L15.3654 0.5C17.697 0.758545 19.8712 1.80066 21.5311 3.45526ZM23.3508 22.1971C23.3521 22.5165 23.2866 22.8326 23.1584 23.1252C23.0302 23.4179 22.8422 23.6806 22.6064 23.8965C22.3706 24.1124 22.0922 24.2768 21.7891 24.3791C21.486 24.4814 21.1648 24.5194 20.8461 24.4907C17.3105 24.1072 13.9143 22.9014 10.9304 20.9701C8.15424 19.2094 5.80057 16.8602 4.0365 14.0894C2.0947 11.0977 0.886292 7.69147 0.509155 4.14679C0.480438 3.82965 0.518188 3.51001 0.620026 3.20825C0.721863 2.90649 0.885529 2.62921 1.10059 2.39404C1.31567 2.15887 1.57745 1.97101 1.86929 1.84235C2.16113 1.71368 2.47659 1.64709 2.79562 1.64679L6.24255 1.64679C6.80014 1.6413 7.34073 1.83838 7.76352 2.20129C8.18631 2.56421 8.46246 3.06818 8.5405 3.61926C8.686 4.72021 8.95581 5.80127 9.34479 6.84174C9.49939 7.2522 9.53284 7.69824 9.44119 8.12714C9.34955 8.55597 9.13666 8.94965 8.82776 9.26141L7.36853 10.7178C9.00418 13.5889 11.3859 15.966 14.2624 17.5985L15.7216 16.1421C16.034 15.8338 16.4284 15.6213 16.8581 15.5298C17.2878 15.4384 17.7347 15.4717 18.146 15.626C19.1884 16.0143 20.2715 16.2836 21.3746 16.4288C21.9327 16.5074 22.4424 16.788 22.8068 17.2172C23.1712 17.6464 23.3648 18.1943 23.3508 18.7568L23.3508 22.1971Z"
+                        stroke="#FFFFFF" stroke-opacity="1.000000" stroke-width="1.000000" stroke-linejoin="round" />
+                </svg>
+                <P>+380441234567</P>
+            </a>
+            <p>Follow us</p>
+            <div id="soc_med">
+
+
+                <a href="https://www.facebook.com/">
+                    <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <desc>
+                            Created with Pixso.
+                        </desc>
+                        <defs />
+                        <rect id="social" width="24.000000" height="24.000000" fill="#FFFFFF" fill-opacity="0" />
+                        <circle id="Ellipse 17" cx="12.000000" cy="12.000000" r="12.000000" fill="#FFFFFF"
+                            fill-opacity="1.000000" />
+                        <path id="Vector"
+                            d="M14.3471 4C13.295 4 12.286 4.42145 11.5421 5.17157C10.7981 5.92169 10.3802 6.93915 10.3802 8L10.3802 10.4L8 10.4L8 13.6L10.3802 13.6L10.3802 20L13.5537 20L13.5537 13.6L15.9339 13.6L16.7273 10.4L13.5537 10.4L13.5537 8C13.5537 7.78784 13.6373 7.58435 13.7861 7.43433C13.9349 7.2843 14.1367 7.20001 14.3471 7.20001L16.7273 7.20001L16.7273 4L14.3471 4Z"
+                            stroke="#000000" stroke-opacity="1.000000" stroke-width="1.000000"
+                            stroke-linejoin="round" />
+                    </svg>
+                </a>
+                <a href="https://web.telegram.org/">
+                    <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <desc>
+                            Created with Pixso.
+                        </desc>
+                        <defs />
+                        <rect id="social" width="24.000000" height="24.000000" fill="#FFFFFF" fill-opacity="0" />
+                        <circle id="Ellipse 17" cx="12.000000" cy="12.000000" r="12.000000" fill="#FFFFFF"
+                            fill-opacity="1.000000" />
+                        <path id="Vector" d="M19 5L10 14" stroke="#000000" stroke-opacity="1.000000"
+                            stroke-width="1.000000" stroke-linejoin="round" stroke-linecap="round" />
+                        <path id="Vector" d="M13.4 21L10.2 13.8L3 10.6L19 5L13.4 21Z" stroke="#000000"
+                            stroke-opacity="1.000000" stroke-width="1.000000" stroke-linejoin="round" />
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/">
+                    <svg width="24.000000" height="24.000000" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <desc>
+                            Created with Pixso.
+                        </desc>
+                        <defs />
+                        <rect id="social" width="24.000000" height="24.000000" fill="#FFFFFF" fill-opacity="0" />
+                        <circle id="Ellipse 17" cx="12.000000" cy="12.000000" r="12.000000" fill="#FFFFFF"
+                            fill-opacity="1.000000" />
+                        <path id="instagram"
+                            d="M16.7302 4.10052Q16.2775 4 15.8024 4L8.26749 4Q7.79245 4 7.33972 4.10052L7.33972 4.10052Q6.96533 4.18365 6.60623 4.33557Q6.24414 4.48871 5.92126 4.70142L5.92126 4.70142Q5.56119 4.93866 5.24991 5.24994Q4.93863 5.56122 4.70142 5.92126L4.70142 5.92126Q4.48871 6.24414 4.33557 6.6062Q4.18369 6.96533 4.10052 7.33972Q4 7.79242 4 8.26746L4 15.8024Q4 16.2775 4.10052 16.7302L4.10052 16.7302Q4.18369 17.1046 4.33557 17.4637Q4.48871 17.8257 4.70139 18.1486Q4.93863 18.5087 5.24991 18.82Q5.5611 19.1312 5.92105 19.3683L5.92126 19.3685L5.9213 19.3685L5.92133 19.3685Q6.24417 19.5812 6.60623 19.7344Q6.9653 19.8862 7.33963 19.9694L7.33963 19.9694L7.33966 19.9694L7.34003 19.9695Q7.7926 20.0699 8.26749 20.0699L15.8024 20.0699Q16.2775 20.0699 16.7302 19.9694L16.7302 19.9694L16.7303 19.9694Q17.1046 19.8862 17.4637 19.7344Q17.8257 19.5812 18.1486 19.3685Q18.5087 19.1313 18.82 18.82Q19.1313 18.5087 19.3685 18.1486L19.3686 18.1486Q19.5812 17.8257 19.7343 17.4637Q19.8862 17.1046 19.9694 16.7302L19.9694 16.7302Q20.0699 16.2775 20.0699 15.8024L20.0699 8.26746Q20.0699 7.7926 19.9695 7.34009L19.9694 7.33972L19.9694 7.3396Q19.8862 6.96527 19.7343 6.6062Q19.5812 6.24414 19.3685 5.92126L19.3685 5.92126L19.3685 5.92126Q19.1313 5.56116 18.82 5.24994Q18.5087 4.93866 18.1487 4.70142L18.1485 4.70129Q17.8257 4.48865 17.4637 4.33557Q17.1046 4.18365 16.7302 4.10052ZM8.26749 5L15.8024 5Q16.1761 5 16.5313 5.08099L16.5313 5.08099L16.5313 5.08099Q16.8083 5.14417 17.0741 5.25659Q17.3464 5.3717 17.5898 5.53101L17.5898 5.53101Q17.8705 5.71466 18.1129 5.95703Q18.3552 6.19934 18.5389 6.48004L18.5389 6.48004Q18.6982 6.72351 18.8134 6.99579Q18.9258 7.26154 18.9889 7.53845L18.9889 7.53864Q19.0699 7.8938 19.0699 8.26746L19.0699 15.8024Q19.0699 16.1761 18.9889 16.5313L18.9889 16.5313Q18.9258 16.8083 18.8134 17.0742Q18.6982 17.3464 18.5388 17.5899L18.5388 17.59Q18.3552 17.8706 18.1129 18.1129Q17.8706 18.3552 17.5899 18.5388L17.5899 18.5389L17.5898 18.5389Q17.3464 18.6982 17.0741 18.8134Q16.8083 18.9258 16.5314 18.9889L16.5313 18.989Q16.1761 19.0699 15.8024 19.0699L8.26749 19.0699Q7.89398 19.0699 7.53891 18.989L7.53857 18.9889L7.53775 18.9887Q7.26117 18.9256 6.99579 18.8134Q6.72369 18.6982 6.48044 18.5391L6.47998 18.5389Q6.19931 18.3552 5.95703 18.1129Q5.71469 17.8705 5.53101 17.5898Q5.37173 17.3464 5.25656 17.0742Q5.1442 16.8085 5.08105 16.5316L5.08099 16.5314L5.08087 16.5308Q5 16.1758 5 15.8024L5 8.26746Q5 7.8938 5.08099 7.53857L5.08099 7.53857Q5.14417 7.26154 5.25656 6.99579Q5.3717 6.72357 5.53091 6.48022L5.53104 6.48004L5.53104 6.48004Q5.71469 6.19934 5.95703 5.95703Q6.19934 5.71472 6.48004 5.53101Q6.72348 5.37177 6.99579 5.25659Q7.26157 5.14417 7.53857 5.08099Q7.8938 5 8.26749 5ZM16.1878 7.39075C16.4678 7.39075 16.6878 7.61072 16.6878 7.89075C16.6878 8.17072 16.4678 8.39075 16.1878 8.39075L16.1792 8.39075C15.8992 8.39075 15.6792 8.17072 15.6792 7.89075C15.6792 7.61072 15.8992 7.39075 16.1792 7.39075L16.1878 7.39075ZM15.1868 13.6207Q15.0591 13.8667 14.8967 14.0871L14.8967 14.0871Q14.7343 14.3075 14.5371 14.5023Q14.3398 14.697 14.1175 14.8568Q13.8951 15.0164 13.6475 15.1411Q13.3999 15.2656 13.1392 15.3491L13.1391 15.3491Q12.8784 15.4326 12.6045 15.475Q12.3306 15.5173 12.0568 15.5165L12.0568 15.5165Q11.783 15.5156 11.5094 15.4716Q11.2358 15.4276 10.9756 15.3425Q10.7153 15.2574 10.4685 15.1312Q10.2217 15.0051 10.0003 14.844L10.0002 14.844Q9.77887 14.6829 9.58292 14.487Q9.38693 14.291 9.22586 14.0696L9.22586 14.0696Q9.06479 13.8482 8.93866 13.6014Q8.81253 13.3546 8.72745 13.0944L8.72745 13.0944Q8.64236 12.8341 8.59833 12.5605Q8.55429 12.2868 8.55344 12.0131L8.55344 12.013Q8.55261 11.7393 8.59494 11.4653Q8.6373 11.1915 8.72076 10.9307Q8.80426 10.6699 8.92886 10.4224Q9.05347 10.1748 9.21317 9.95239Q9.37286 9.73004 9.56763 9.53284Q9.76242 9.33563 9.98282 9.17322L9.98282 9.17322Q10.2032 9.0108 10.4492 8.88312Q10.6953 8.75549 10.955 8.66876Q11.2147 8.58209 11.488 8.53638Q11.7614 8.49066 12.0352 8.4881L12.0352 8.4881Q12.309 8.4856 12.5831 8.52625Q12.8627 8.56769 13.1288 8.65198L13.1288 8.65198L13.1289 8.65198Q13.395 8.73627 13.6475 8.8634Q13.9001 8.99054 14.1263 9.15405L14.1264 9.15411Q14.3526 9.31757 14.5524 9.51746Q14.7523 9.71741 14.9159 9.9436Q15.0794 10.1699 15.2065 10.4224Q15.3336 10.6749 15.4179 10.941Q15.5022 11.2071 15.5436 11.4868Q15.5843 11.761 15.5818 12.0348Q15.5792 12.3085 15.5335 12.5818Q15.4878 12.8552 15.4011 13.1149L15.4011 13.115Q15.3144 13.3746 15.1868 13.6207ZM14.4525 12.7983L14.4525 12.7983Q14.5145 12.6125 14.5472 12.4169Q14.5799 12.2214 14.5817 12.0255Q14.5836 11.8296 14.5545 11.6335Q14.5248 11.4333 14.4645 11.243Q14.4042 11.0526 14.3133 10.8719Q14.2223 10.6913 14.1054 10.5295L14.1053 10.5294Q13.9883 10.3676 13.8453 10.2245Q13.7023 10.0815 13.5405 9.9646L13.5404 9.96454Q13.3786 9.8476 13.1979 9.75665Q13.0173 9.66571 12.8269 9.60541L12.8269 9.60541Q12.6365 9.5451 12.4364 9.51544Q12.2403 9.48633 12.0444 9.48816L12.0444 9.48816Q11.8485 9.48999 11.653 9.52264Q11.4574 9.55536 11.2716 9.61737L11.2716 9.61737Q11.0858 9.67944 10.9098 9.77075Q10.7338 9.86206 10.5761 9.97827Q10.4184 10.0945 10.2791 10.2355Q10.1397 10.3766 10.0255 10.5358Q9.91122 10.6948 9.82208 10.8719Q9.73294 11.0491 9.67322 11.2357Q9.61349 11.4222 9.58319 11.6181Q9.55292 11.8141 9.5535 12.0099L9.5535 12.0099Q9.55411 12.2059 9.5856 12.4016Q9.61713 12.5974 9.67798 12.7835Q9.73886 12.9697 9.8291 13.1463Q9.91934 13.3229 10.0346 13.4813L10.0346 13.4813Q10.1498 13.6397 10.29 13.7798Q10.4302 13.9201 10.5886 14.0353Q10.747 14.1506 10.9236 14.2408Q11.1001 14.331 11.2863 14.3919L11.2863 14.3919Q11.4725 14.4528 11.6683 14.4843Q11.864 14.5157 12.0599 14.5164L12.0599 14.5164Q12.2558 14.517 12.4518 14.4867Q12.6477 14.4564 12.8343 14.3967Q13.0208 14.337 13.1979 14.2478Q13.375 14.1587 13.5341 14.0445L13.5341 14.0444Q13.6932 13.9302 13.8343 13.7908Q13.9754 13.6514 14.0916 13.4937L14.0917 13.4937Q14.2078 13.3361 14.2991 13.1601Q14.3904 12.9841 14.4525 12.7983Z"
+                            clip-rule="evenodd" fill="#000000" fill-opacity="1.000000" fill-rule="evenodd" />
+                    </svg>
+
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="scripts/test_jquery.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="scripts/index.js"></script>
+</body>
+
+</html>
